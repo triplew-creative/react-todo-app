@@ -82,8 +82,8 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
         <motion.div
           className={styles.wrapper}
           initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
+          animate={{ opacity: 1, display: 'flex' }}
+          exit={{ opacity: 0, display: 'none' }}
         >
           <motion.div
             className={styles.container}
@@ -111,7 +111,7 @@ function TodoModal({ type, modalOpen, setModalOpen, todo }) {
                 {type === 'add' ? 'Add' : 'Update'} TODO
               </h1>
               <label htmlFor="title">
-                Title
+                Title - {modalOpen}
                 <input
                   type="text"
                   id="title"

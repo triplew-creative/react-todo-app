@@ -44,7 +44,7 @@ function TodoItem({ todo }) {
   };
 
   const handleUpdate = () => {
-    setUpdateModalOpen(true);
+    setUpdateModalOpen(false);
   };
 
   return (
@@ -62,7 +62,7 @@ function TodoItem({ todo }) {
               {todo.title}
             </p>
             <p className={styles.time}>
-              {format(new Date(todo.time), 'p, MM/dd/yyyy')}
+              {format(new Date(todo.time), 'p, dd/MM/yyyy')}
             </p>
           </div>
         </div>
@@ -73,6 +73,7 @@ function TodoItem({ todo }) {
             onKeyDown={() => handleDelete()}
             tabIndex={0}
             role="button"
+            aria-label="Delete"
           >
             <MdDelete />
           </div>
@@ -82,6 +83,7 @@ function TodoItem({ todo }) {
             onKeyDown={() => handleUpdate()}
             tabIndex={0}
             role="button"
+            aria-label="Update"
           >
             <MdEdit />
           </div>
